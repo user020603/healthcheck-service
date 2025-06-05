@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package container_adm_service;
+
+option go_package = "./proto/pb";
+
+service ContainerAdmService {
+    rpc GetAllContainers(EmptyRequest) returns (ContainerResponse);
+}
+
+message EmptyRequest {}
+
+message ContainerResponse {
+    repeated ContainerName containers = 1;
+}
+
+message ContainerName {
+    int64 id = 1;
+    string name = 2;
+}
