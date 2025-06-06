@@ -21,7 +21,6 @@ func NewHealthCheckClient(client pb.ContainerAdmServiceClient, logger logger.ILo
 		client: client,
 		logger: logger,
 	}
-
 }
 
 func (h *healthcheckClient) GetAllContainers() (*pb.ContainerResponse, error) {
